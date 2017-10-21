@@ -4,7 +4,7 @@
   "description": "Initio - Free, multipurpose html5 template\r =============",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist; cp -rf ./src ./dist",
+    "build": "rm -rf ./public; cp -rf ./src ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
