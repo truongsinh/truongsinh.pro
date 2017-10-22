@@ -37,8 +37,9 @@ const css = (process.env.NODE_ENV === `production`) ?
 // Use `module.exports` to be compliante with `webpack-require` import method
 module.exports = (props: HtmlProps) => {
   return (
-    <html {...props.htmlAttributes}>>
+    <html {...props.htmlAttributes}>
       <Head>
+        {props.headComponents}
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
@@ -72,7 +73,6 @@ module.exports = (props: HtmlProps) => {
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
-        {props.headComponents}
         {props.postBodyComponents}
       </body>
     </html>
