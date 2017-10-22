@@ -1,61 +1,17 @@
 import * as React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-
+require("../assets/css/styles.css");
 interface IndexPageProps {
   location: {
     pathname: string;
   };
 }
 
-class Head extends React.PureComponent<{}, {}>{
-  render() {
-    let dangerousInnerHTML: string[] = this.props.children.map(value => {
-      if (typeof value !== 'string')
-        return renderToStaticMarkup(value);
-      else
-        return value;
-    });
-
-    return (
-      <head dangerouslySetInnerHTML={{ __html: dangerousInnerHTML.join('') }}>
-      </head>
-    );
-  }
-}
-
 export default (props: IndexPageProps) =>
-  // <!DOCTYPE html>
-  <html lang="en">
-    <Head>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <title>TruongSinh Tran-Nguyen</title>
-
-      <link rel="shortcut icon" href="assets/images/gt_favicon.png" />
-
-      {/* <!-- Bootstrap --> */}
-      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet" />
-      {/* <!-- Icons --> */}
-      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-      {/* <!-- Fonts --> */}
-      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
-      {/* <!-- Custom styles --> */}
-      <link rel="stylesheet" href="assets/css/styles.css" />
-
-      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43130231-1"></script>
-      <script src="../assets/js/my-script-tag.js"></script>
-      {`
-      <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
-      `}
-    </Head>
-    <body className="home">
-
+    <div className="home">
       <header id="header">
         <div id="head" className="parallax" parallax-speed="2">
           <h1 id="logo" className="text-center">
-            <img className="img-circle" src="assets/images/guy.jpg" alt="" />
+            <img className="img-circle" src={require("../assets/images/guy.jpg")} alt="" />
             <span className="title">TruongSinh "Sinh" Tran-Nguyen</span>
             <span className="tagline">Tech Visionary, Coach and Investor</span>
             <p className="tagline">
@@ -65,12 +21,14 @@ export default (props: IndexPageProps) =>
               >
                 <i className="fa fa-twitter fa-2"></i>
               </a>
+              &nbsp;
               <a target="_blank"
                 href="https://www.linkedin.com/in/truongsinh/"
 
               >
                 <i className="fa fa-linkedin fa-2"></i>
               </a>
+              &nbsp;
               <a target="_blank"
                 href="https://github.com/truongsinh/"
 
@@ -256,7 +214,6 @@ export default (props: IndexPageProps) =>
       {/* <!-- JavaScript libs are placed at the end of the document so the pages load faster --> */}
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-      <script src="assets/js/template.js"></script>
-    </body>
-  </html>
+      <script src={require("file!../assets/js/template.js")}></script>
+    </div>
   ;
