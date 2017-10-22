@@ -2,7 +2,6 @@
 /* tslint:disable no-console */
 
 import * as React from "react";
-import Helmet from "react-helmet";
 import { renderToStaticMarkup } from "react-dom/server";
 
 
@@ -27,21 +26,25 @@ interface HtmlProps {
   body: any;
   postBodyComponents: any;
   headComponents: any;
+  htmlAttributes: any;
+  bodyAttributes: any;
 }
+
+const css = (process.env.NODE_ENV === `production`) ?
+<link rel="stylesheet" href={require("./assets/css/styles.css")} />
+: null;
 
 // Use `module.exports` to be compliante with `webpack-require` import method
 module.exports = (props: HtmlProps) => {
-  const head = Helmet.rewind();
-
-  const css = (process.env.NODE_ENV === `production`) ?
-    <link rel="stylesheet" href={require("./assets/css/styles.css")} />
-    : null;
-
   return (
-    <html lang="en">
+    <html {...props.htmlAttributes}>>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
         <title>TruongSinh Tran-Nguyen</title>
 
@@ -62,9 +65,10 @@ module.exports = (props: HtmlProps) => {
         <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
         `}
       </Head>
-      <body className="home">
+      <body className="home" {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
+          key={`body`}
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
