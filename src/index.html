@@ -35,11 +35,17 @@
 		*/
 		var trackOutboundLink = function(context) {
 			var url = context.href;
+			var target = context.target;
 			gtag('event', 'click', {
 				'event_category': 'outbound',
 				'event_label': url,
 				'transport_type': 'beacon',
-				'event_callback': function(){document.location = url;}
+				'event_callback': function(){
+					target === "_blank" ?
+						window.open(url, target) :
+						document.location = url
+					;
+				}
 			});
 			return false;
 		}
