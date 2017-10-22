@@ -26,6 +26,24 @@
 
 		gtag('config', 'UA-43130231-1');
 	</script>
+	<script>
+		/**
+		* Function that tracks a click on an outbound link in Analytics.
+		* This function takes a valid URL string as an argument, and uses that URL string
+		* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+		* using 'navigator.sendBeacon' in browser that support it.
+		*/
+		var trackOutboundLink = function(context) {
+			var url = context.href;
+			gtag('event', 'click', {
+				'event_category': 'outbound',
+				'event_label': url,
+				'transport_type': 'beacon',
+				'event_callback': function(){document.location = url;}
+			});
+			return false;
+		}
+		</script>
 
 	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
 </head>
@@ -38,9 +56,24 @@
 			<span class="title">TruongSinh "Sinh" Tran-Nguyen</span>
 			<span class="tagline">Tech Visionary, Coach and Investor</span>
 			<p class="tagline">
-				<a target="_blank" href="https://twitter.com/truongsinhtn"><i class="fa fa-twitter fa-2"></i></a>
-				<a target="_blank" href="https://www.linkedin.com/in/truongsinh"><i class="fa fa-linkedin fa-2"></i></a>
-				<a target="_blank" href="https://github.com/truongsinh"><i class="fa fa-github fa-2"></i></a>
+				<a target="_blank"
+					href="https://twitter.com/truongsinhtn/"
+					onclick="return trackOutboundLink(this);"
+				>
+					<i class="fa fa-twitter fa-2"></i>
+				</a>
+				<a target="_blank"
+					href="https://www.linkedin.com/in/truongsinh/"
+					onclick="return trackOutboundLink(this);"
+				>
+					<i class="fa fa-linkedin fa-2"></i>
+				</a>
+				<a target="_blank"
+					href="https://github.com/truongsinh/"
+					onclick="return trackOutboundLink(this);"
+				>
+					<i class="fa fa-github fa-2"></i>
+				</a>
 			</p>
 		</h1>
 	</div>
@@ -111,7 +144,10 @@
 			<div class="thumbnails recentworks row">
 				
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a target="_blank" class="thumbnail" href="https://www.linkedin.com/pulse/how-stop-saying-im-too-busy-just-why-truongsinh-tran-nguyen/">
+					<a target="_blank" class="thumbnail"
+						href="https://www.linkedin.com/pulse/how-stop-saying-im-too-busy-just-why-truongsinh-tran-nguyen/"
+						onclick="return trackOutboundLink(this);"
+					>
 						<span class="img">
 							<img src="https://media.licdn.com/media/AAIA_wDGAAAAAQAAAAAAAA3WAAAAJGM1MmUxNDExLWYzODItNGE0OC04ZTkwLTU4NjUwZjVkZTI4Ng.png" alt="">
 							<span class="cover"><span class="more">Read &amp; discuss on Linkedin &rarr;</span></span>
@@ -124,7 +160,10 @@
 				</div>
 				
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a target="_blank" class="thumbnail" href="https://www.linkedin.com/pulse/we-need-more-information-do-iterations-assumption-tran-nguyen/">
+					<a target="_blank" class="thumbnail"
+						href="https://www.linkedin.com/pulse/we-need-more-information-do-iterations-assumption-tran-nguyen/"
+						onclick="return trackOutboundLink(this);"
+					>
 						<span class="img">
 							<img src="https://media.licdn.com/media/AAIA_wDGAAAAAQAAAAAAAAooAAAAJGJmZmI3ZDUwLThlY2ItNDBiZS1hN2IyLTk3YzNlYjNlMTc4Zg.jpg" alt="">
 							<span class="cover"><span class="more">Read &amp; discuss on Linkedin &rarr;</span></span>
@@ -137,7 +176,10 @@
 				</div>
 				
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a target="_blank" class="thumbnail" href="https://www.linkedin.com/pulse/2-contrast-speeches-given-inauguration-day-truongsinh-tran-nguyen/">
+					<a target="_blank" class="thumbnail"
+						href="https://www.linkedin.com/pulse/2-contrast-speeches-given-inauguration-day-truongsinh-tran-nguyen/"
+						onclick="return trackOutboundLink(this);"
+					>
 						<span class="img">
 							<img src="https://media.licdn.com/media/AAIA_wDGAAAAAQAAAAAAAAxLAAAAJDE2MmEyYjc3LWM0NmQtNDc2NC05MzIyLTA4NGU0ZjllYTc4NQ.png" alt="">
 							<span class="cover"><span class="more">Read &amp; discuss on Linkedin &rarr;</span></span>
@@ -150,7 +192,10 @@
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a target="_blank" class="thumbnail" href="https://www.linkedin.com/pulse/stop-saying-depends-make-your-answers-useful-truongsinh-tran-nguyen/">
+					<a target="_blank" class="thumbnail"
+						href="https://www.linkedin.com/pulse/stop-saying-depends-make-your-answers-useful-truongsinh-tran-nguyen/"
+						onclick="return trackOutboundLink(this);"
+					>
 						<span class="img">
 							<img src="https://media.licdn.com/media/AAEAAQAAAAAAAAOrAAAAJDcxY2RkNGFmLWYyYjAtNDdmYy1hY2U2LWRhMjBlYjAyNDYxOQ.jpg" alt="">
 							<span class="cover"><span class="more">Read &amp; discuss on Linkedin &rarr;</span></span>
@@ -163,7 +208,10 @@
 				</div>
 				
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a target="_blank" class="thumbnail" href="https://www.linkedin.com/pulse/fighting-spam-email-stop-blacklisting-ips-start-using-tran-nguyen/">
+					<a target="_blank" class="thumbnail"
+						href="https://www.linkedin.com/pulse/fighting-spam-email-stop-blacklisting-ips-start-using-tran-nguyen/"
+						onclick="return trackOutboundLink(this);"
+						>
 						<span class="img">
 							<img src="https://tech.smarp.com/static/ab293d622eb852df73db445502a6f93c-2584a.jpg" alt="">
 							<span class="cover"><span class="more">Read &amp; discuss on Linkedin &rarr;</span></span>
@@ -176,7 +224,10 @@
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a target="_blank" class="thumbnail" href="https://tech.smarp.com/truongsinh/continuous-integration-ci-for-golang-with-gitlab-8-x">
+					<a target="_blank" class="thumbnail"
+						href="https://tech.smarp.com/truongsinh/continuous-integration-ci-for-golang-with-gitlab-8-x"
+						onclick="return trackOutboundLink(this);"
+					>
 						<span class="img">
 							<img src="https://tech.smarp.com/static/63e2b86e91f521712e6ba85cb217c44b-2584a.jpg" alt="">
 							<span class="cover"><span class="more">Read on Smarp blog &rarr;</span></span>
