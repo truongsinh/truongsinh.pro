@@ -12,10 +12,13 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         return config;
       });
       break;
-    case "development":
+    case "develop":
       break;
     default:
-      config.removeLoader("css");
+      config.loader('css', (config) => {
+        config.loader = "null-loader";
+        return config;
+      });
   }
 
   return config;
