@@ -1,4 +1,5 @@
 import * as React from "react";
+import { A } from "../components/a";
 require("../assets/css/styles.css");
 interface IndexPageProps {
   location: {
@@ -15,26 +16,26 @@ export default (props: IndexPageProps) =>
             <span className="title">TruongSinh "Sinh" Tran-Nguyen</span>
             <span className="tagline">Tech Visionary, Coach and Investor</span>
             <p className="tagline">
-              <a target="_blank"
+              <A
                 href="https://twitter.com/truongsinhtn/"
 
               >
                 <i className="fa fa-twitter fa-2"></i>
-              </a>
+              </A>
               &nbsp;
-              <a target="_blank"
+              <A
                 href="https://www.linkedin.com/in/truongsinh/"
 
               >
                 <i className="fa fa-linkedin fa-2"></i>
-              </a>
+              </A>
               &nbsp;
-              <a target="_blank"
+              <A
                 href="https://github.com/truongsinh/"
 
               >
                 <i className="fa fa-github fa-2"></i>
-              </a>
+              </A>
             </p>
           </h1>
         </div>
@@ -107,7 +108,7 @@ export default (props: IndexPageProps) =>
             <div className="thumbnails recentworks row">
 
               <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a target="_blank" className="thumbnail"
+                <A className="thumbnail"
                   href="https://www.linkedin.com/pulse/how-stop-saying-im-too-busy-just-why-truongsinh-tran-nguyen/"
 
                 >
@@ -116,14 +117,14 @@ export default (props: IndexPageProps) =>
                     <span className="cover"><span className="more">Read &amp; discuss on Linkedin &rarr;</span></span>
                   </span>
                   <span className="title">HOW stop saying "I'm too busy" (and not just WHY)</span>
-                </a>
+                </A>
                 <span className="details"><a href="">leadership</a> | <a href="">time management</a></span>
                 <h4></h4>
                 <p></p>
               </div>
 
               <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a target="_blank" className="thumbnail"
+                <A className="thumbnail"
                   href="https://www.linkedin.com/pulse/we-need-more-information-do-iterations-assumption-tran-nguyen/"
 
                 >
@@ -132,14 +133,14 @@ export default (props: IndexPageProps) =>
                     <span className="cover"><span className="more">Read &amp; discuss on Linkedin &rarr;</span></span>
                   </span>
                   <span className="title">Solving problems without waiting for irrelavent info</span>
-                </a>
+                </A>
                 <span className="details"><a href="">leadership</a> | <a href="">problem solving</a></span>
                 <h4></h4>
                 <p></p>
               </div>
 
               <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a target="_blank" className="thumbnail"
+                <A className="thumbnail"
                   href="https://www.linkedin.com/pulse/2-contrast-speeches-given-inauguration-day-truongsinh-tran-nguyen/"
 
                 >
@@ -148,14 +149,14 @@ export default (props: IndexPageProps) =>
                     <span className="cover"><span className="more">Read &amp; discuss on Linkedin &rarr;</span></span>
                   </span>
                   <span className="title">2 speeches given on inauguration day, 2 leadership styles</span>
-                </a>
+                </A>
                 <span className="details"><a href="">leadership</a> | <a href="">inspiration</a></span>
                 <h4></h4>
                 <p></p>
               </div>
 
               <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a target="_blank" className="thumbnail"
+                <A className="thumbnail"
                   href="https://www.linkedin.com/pulse/stop-saying-depends-make-your-answers-useful-truongsinh-tran-nguyen/"
 
                 >
@@ -164,14 +165,14 @@ export default (props: IndexPageProps) =>
                     <span className="cover"><span className="more">Read &amp; discuss on Linkedin &rarr;</span></span>
                   </span>
                   <span className="title">Stop saying, "it depends"; make your answers useful</span>
-                </a>
+                </A>
                 <span className="details"><a href="">leadership</a> | <a href="">problem solving</a></span>
                 <h4></h4>
                 <p></p>
               </div>
 
               <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a target="_blank" className="thumbnail"
+                <A className="thumbnail"
                   href="https://www.linkedin.com/pulse/fighting-spam-email-stop-blacklisting-ips-start-using-tran-nguyen/"
 
                 >
@@ -180,14 +181,14 @@ export default (props: IndexPageProps) =>
                     <span className="cover"><span className="more">Read &amp; discuss on Linkedin &rarr;</span></span>
                   </span>
                   <span className="title">Fighting spam email: stop IPs blacklist, start using SPF &amp; DKIM</span>
-                </a>
+                </A>
                 <span className="details"><a href="">technology</a> | <a href="">email</a> | <a href="">spam</a></span>
                 <h4></h4>
                 <p></p>
               </div>
 
               <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a target="_blank" className="thumbnail"
+                <A className="thumbnail"
                   href="https://tech.smarp.com/truongsinh/continuous-integration-ci-for-golang-with-gitlab-8-x/"
 
                 >
@@ -196,7 +197,7 @@ export default (props: IndexPageProps) =>
                     <span className="cover"><span className="more">Read on Smarp blog &rarr;</span></span>
                   </span>
                   <span className="title">Continuous Integration (CI) for Golang with Gitlab 8.x</span>
-                </a>
+                </A>
                 <span className="details"><a href="">technology</a> | <a href="">continuous integration</a></span>
                 <h4></h4>
                 <p></p>

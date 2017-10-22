@@ -1,6 +1,19 @@
+declare global {
+  interface Window {
+    dataLayer:any;
+  }
+}
+
+if (typeof window === 'undefined') {
+  (global as any).window = {} as Window;
+}
+// @todo refactor the following lines from html.tsx into this file
+// {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43130231-1"></script>
 
 window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
+
+function gtag(action: string, param: string | Date, extra?: {}) { window.dataLayer.push(arguments); }
 gtag('js', new Date());
 
 gtag('config', 'UA-43130231-1');
@@ -11,9 +24,7 @@ gtag('config', 'UA-43130231-1');
 * as the event label. Setting the transport method to 'beacon' lets the hit be sent
 * using 'navigator.sendBeacon' in browser that support it.
 */
-var trackOutboundLink = function (context) {
-  var url = context.href;
-  var target = context.target;
+export const trackOutboundLink = function (url: string, target: string) {
   gtag('event', 'click', {
     'event_category': 'outbound',
     'event_label': url,
@@ -21,7 +32,7 @@ var trackOutboundLink = function (context) {
     'event_callback': function () {
       target === "_blank" ?
         window.open(url, target) :
-        document.location = url
+        document.location.assign(url);
         ;
     }
   });

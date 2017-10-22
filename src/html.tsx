@@ -23,6 +23,7 @@ class Head extends React.PureComponent<{}, {}>{
 }
 
 interface HtmlProps {
+  preBodyComponents: any;
   body: any;
   postBodyComponents: any;
   headComponents: any;
@@ -57,16 +58,17 @@ module.exports = (props: HtmlProps) => {
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43130231-1"></script>
-        <script src={require("file!./assets/js/my-script-tag.js")}></script>
         {`
         <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
         `}
       </Head>
       <body className="home">
+        {props.preBodyComponents}
         <div
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
+        {props.headComponents}
         {props.postBodyComponents}
       </body>
     </html>
