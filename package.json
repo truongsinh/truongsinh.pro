@@ -4,6 +4,7 @@
   "description": "Initio - Free, multipurpose html5 template\r =============",
   "main": "index.js",
   "scripts": {
+    "start": "gatsby develop",
     "build": "rm -rf ./public; cp -rf ./src ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +17,17 @@
   "bugs": {
     "url": "https://gitlab.com/truongsinh/truongsinh.pro/issues"
   },
-  "homepage": "https://gitlab.com/truongsinh/truongsinh.pro#README"
+  "homepage": "https://gitlab.com/truongsinh/truongsinh.pro#README",
+  "devDependencies": {
+    "@types/react": "^16.0.17",
+    "@types/react-dom": "^16.0.2",
+    "gatsby": "^1.9.76",
+    "gatsby-link": "^1.6.23",
+    "gatsby-plugin-typescript": "^1.4.8",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
 }
