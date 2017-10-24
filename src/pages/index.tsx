@@ -1,7 +1,7 @@
 import * as React from "react";
 import { A } from "../components/a";
 import { Footer } from "../components/footer/footer";
-require("../assets/css/styles.css");
+import Helmet from "react-helmet";
 interface IndexPageProps {
   location: {
     pathname: string;
@@ -11,6 +11,14 @@ interface IndexPageProps {
 export default (props: IndexPageProps) =>
   <div className="home">
     <header id="header">
+      {/* <!-- Bootstrap --> */}
+      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet" />
+      {/* <!-- Icons --> */}
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+      {/* <!-- Fonts --> */}
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
+      {/* <!-- Custom styles --> */}
+      <link rel="stylesheet" href={require("../assets/css/styles.css")} />
       <div id="head" className="parallax" parallax-speed="2">
         <h1 id="logo" className="text-center">
           <img className="img-circle" src={require("../assets/images/guy.jpg")} alt="" />

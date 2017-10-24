@@ -1,5 +1,6 @@
 exports.modifyWebpackConfig = ({ config, stage }) => {
   switch (stage) {
+    case "develop":
     case "build-html":
       config.loader('css', (config) => {
         delete config.loader;
@@ -11,8 +12,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         ];
         return config;
       });
-      break;
-    case "develop":
       break;
     default:
       config.loader('css', (config) => {
