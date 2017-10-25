@@ -143,7 +143,7 @@ export default (props: IndexPageProps) =>
               {data.socnetList.map((e) => (
                 // @todo not really semantic here, should use `as` and `icon` props
                 <List.Item>
-                <A href={e.href} ><Icon name={e.socnetName as SemanticICONS} size="big" /></A>
+                <A href={e.href} ><Icon name={e.socnetName as SemanticICONS} size="large" /></A>
                 </List.Item>
               ))}
             </List>
