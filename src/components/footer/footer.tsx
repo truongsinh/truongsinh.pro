@@ -1,10 +1,13 @@
 import * as React from "react";
 import { A } from "../a";
 
+import {
+  Container,
+} from "semantic-ui-react";
 export class Footer extends React.PureComponent<{}, {}> {
   render() {
     return <footer id="underfooter">
-      <div className="container">
+      <Container>
             <div style={{float: "left", marginRight: "0.5em"}}>
               <A rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
                 <img alt="Creative Commons License" style={{ width: 88, height: 31 }} src={require("./by-nc-sa.svg")} />
@@ -19,7 +22,7 @@ export class Footer extends React.PureComponent<{}, {}> {
             </div>
 
         {/* <!-- /row of widgets --> */}
-      </div>
+      </Container>
     </footer>
   }
 }

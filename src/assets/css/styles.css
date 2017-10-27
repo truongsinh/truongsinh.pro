@@ -8,8 +8,11 @@ body {
   color: #666666;
   padding: 0;
 }
-.topspace {
-  margin-top: 40px;
+section {
+  margin-bottom: 2em !important;
+}
+.text-center {
+  text-align: center;
 }
 /*********************************************************************
 
@@ -229,8 +232,10 @@ a:hover {
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
+  text-align: center;
 }
-#head img.img-circle {
+/* ui small circular bordered image */
+#head img.circular.image {
   display: block;
   width: 140px;
   height: 140px;
@@ -396,7 +401,6 @@ img {
   border-radius: 0;
   background-clip: padding-box;
   border: 0 none;
-  margin-bottom: 10px;
   padding: 0;
   text-align: center;
   text-decoration: none;
@@ -501,7 +505,7 @@ img {
   display: block;
   width: 100%;
   overflow: hidden;
-  margin: 0px 0 25px;
+  margin: 0;
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;

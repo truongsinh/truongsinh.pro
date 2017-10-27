@@ -1,7 +1,12 @@
 import * as React from "react";
 import { A } from "../components/a";
 import { Footer } from "../components/footer/footer";
-import { List, Container, Icon, SemanticICONS } from "semantic-ui-react";
+import {
+  List, Container, Icon, SemanticICONS,
+  Grid,
+  Segment,
+  Image,
+} from "semantic-ui-react";
 interface IndexPageProps {
   location: {
     pathname: string;
@@ -122,107 +127,93 @@ const data = {
     },
   ],
 };
-
+// @todo https://semantic-ui.com/collections/grid.html
+// All grid systems chooses an arbitrary column count to allow per row. Semantic's default theme uses 16 columns.
+// The default column count, and other arbitrary features of grids can be changed by adjusting Semantic UI's underlying theming variables.
 export default (props: IndexPageProps) =>
   <div className="home">
     <header id="header">
-      {/* <!-- Bootstrap --> */}
-      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet" />
       {/* <!-- Fonts --> */}
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
       {/* <!-- Semantic UI --> */}
       <link rel="stylesheet" href={require('semantic-ui-css/semantic.min.css')} />
       {/* <!-- Custom styles --> */}
       <link rel="stylesheet" href={require("../assets/css/styles.css")} />
-      <div id="head" className="parallax" parallax-speed="2">
+      {/* <div id="head" className="parallax" parallax-speed="2"> */}
+      <section id="head">
         <h1 id="logo" className="text-center">
-          <img className="img-circle" src={data.avatarUrl} alt="" />
+          <Image src={data.avatarUrl} size='small' shape='circular' />
           <span className="title">{data.name}</span>
           <span className="tagline">{data.tagline}</span>
-            <List horizontal className="tagline">
-              {data.socnetList.map((e) => (
-                // @todo not really semantic here, should use `as` and `icon` props
-                <List.Item>
+          <List horizontal className="tagline">
+            {data.socnetList.map((e) => (
+              // @todo not really semantic here, should use `as` and `icon` props
+              <List.Item>
                 <A href={e.href} ><Icon name={e.socnetName as SemanticICONS} size="large" /></A>
-                </List.Item>
-              ))}
-            </List>
+              </List.Item>
+            ))}
+          </List>
         </h1>
-      </div>
+      </section>
+      {/* </div> */}
 
     </header>
 
     <main id="main">
 
-      <div className="container">
+      <Container>
+        <Segment as="section" basic textAlign="center">
+          <p className="lead" style={{ color: "#999" }}>{data.description}</p>
+        </Segment>
 
-        <div className="row section topspace">
-          <div className="col-md-12">
-            <p className="lead text-center text-muted">{data.description}</p>
-          </div>
-        </div>
-        {/* <!-- / section --> */}
-
-        <div className="row section featured topspace">
-          <h2 className="section-title"><span>My Career</span></h2>
-          <div className="row">
-            {data.careerList.map((e) => (
-              <div className="col-sm-6 col-md-3">
-                <h3 className="text-center">{e.title}</h3>
-                <p>{e.description}</p>
-                {/* <!--
+        <Grid as="section" stackable doubling columns={4} className="featured">
+          <Grid.Row>
+            <h2 className="section-title"><span>My Career</span></h2>
+          </Grid.Row>
+          {data.careerList.map((e) => (
+            <Grid.Column>
+              <h3 className="text-center">{e.title}</h3>
+              <p>{e.description}</p>
+              {/* <!--
             <p className="text-center"><a href="" className="btn btn-action">Read more</a></p>
              --> */}
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* <!-- / section --> */}
+            </Grid.Column>
+          ))}
+        </Grid>
 
-        <div className="row section recentworks topspace">
+        <Grid as="section" columns={3} doubling stackable className="recentworks">
+          <Grid.Row columns={1}>
+            <h2 className="section-title"><span>Highlight Articles</span></h2>
+          </Grid.Row>
 
-          <h2 className="section-title"><span>Highlight Articles</span></h2>
+          {data.highlightArticleList.map((e) => (
+            <Grid.Column >
+              <A className="thumbnail" href={e.href}>
+                <span className="img">
+                  <img src={e.thumbnail} alt="" />
+                  <span className="cover"><span className="more">{e.action}</span></span>
+                </span>
+                <span className="title">{e.title}</span>
+              </A>
+              {/* // @todo the use of `Container` create bigger margin than original work  */}
+              <Container textAlign="center">
+                <List celled horizontal>
+                  {e.tagList.map((tag) => (
+                    // @todo in original work class ".details" is used, not `fontSize: ".75rem"`
+                    <List.Item
+                      style={{ fontSize: ".75rem" }}
+                    ><a href="">{tag}</a></List.Item>
+                  ))}
+                </List>
+              </Container>
+            </Grid.Column>
+          ))}
+        </Grid>
 
-          <div className="thumbnails recentworks row">
-            {data.highlightArticleList.map((e) => (
-              <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <A className="thumbnail" href={e.href}>
-                  <span className="img">
-                    <img src={e.thumbnail} alt="" />
-                    <span className="cover"><span className="more">{e.action}</span></span>
-                  </span>
-                  <span className="title">{e.title}</span>
-                </A>
-                {/* // @todo the use of `Container` create bigger margin than original work  */}
-                <Container textAlign="center">
-                  <List celled horizontal>
-                    {e.tagList.map((tag) => (
-                      // @todo in original work class ".details" is used, not `fontSize: ".75rem"`
-                      <List.Item
-                        style={{ fontSize: ".75rem" }}
-                      ><a href="">{tag}</a></List.Item>
-                    ))}
-                  </List>
-                </Container>
-                <h4></h4>
-                <p></p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-        {/* <!-- /section --> */}
-
-      </div>
-      {/* <!-- /container --> */}
+      </Container>
 
     </main>
 
     <Footer />
-
-    {/* <!-- JavaScript libs are placed at the end of the document so the pages load faster --> */}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src={require("file!../assets/js/template.js")}></script>
   </div>
   ;
