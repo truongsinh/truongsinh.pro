@@ -1,6 +1,3 @@
-/* tslint:disable no-var-requires */
-/* tslint:disable no-console */
-
 import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 

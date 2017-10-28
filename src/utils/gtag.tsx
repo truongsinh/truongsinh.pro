@@ -1,22 +1,25 @@
 declare global {
   interface Window {
-    dataLayer:any;
+    dataLayer: any;
   }
 }
 
-if (typeof window === 'undefined') {
-  (global as any).window = {} as Window;
+declare let dataLayer: [any];
+
+function gtag(action: string, param: string | Date, extra?: {}) { dataLayer.push(arguments); }
+
+// @todo use componentDidMount or sth equivalent to use `window` related functionalities
+if (typeof window !== 'undefined') {
+  // @todo refactor the following lines from html.tsx into this file
+  // {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+  // <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43130231-1"></script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43130231-1');
 }
-// @todo refactor the following lines from html.tsx into this file
-// {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43130231-1"></script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(action: string, param: string | Date, extra?: {}) { window.dataLayer.push(arguments); }
-gtag('js', new Date());
-
-gtag('config', 'UA-43130231-1');
 
 /**
 * Function that tracks a click on an outbound link in Analytics.
@@ -33,7 +36,7 @@ export const trackOutboundLink = function (url: string, target: string) {
       target === "_blank" ?
         window.open(url, target) :
         document.location.assign(url);
-        ;
+      ;
     }
   });
   return false;

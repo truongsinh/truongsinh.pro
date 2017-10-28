@@ -1,0 +1,41 @@
+[
+  {
+    "avatar": "./avatar.jpg",
+    "name": "TruongSinh \"Sinh\" Tran-Nguyen",
+    "tagline": "Tech Visionary, Coach and Investor",
+    "description": "\n  I am enthusiastic in technology and leadership,\n  and has been woking in ICT industry for several years,\n  both at technology- and business-oriented,\n  with and without decision-making positions.\n  I believe in creativity, revolution and self-learning orginzation.\n",
+    "socnetList": [
+      {
+        "socnetName": "twitter",
+        "href": "https://twitter.com/truongsinhtn/"
+      },
+      {
+        "socnetName": "linkedin",
+        "href": "https://www.linkedin.com/in/truongsinh/"
+      },
+      {
+        "socnetName": "github",
+        "href": "https://github.com/truongsinh/"
+      }
+    ],
+    "careerList": [
+      {
+        "title": "Speaker & Blogger",
+        "description": "I write and give speech on leadership and technology from my experiences.\n      I believe I can only a be a successful leader if the organization I lead\n      continue to grow and learn even when I left."
+      },
+      {
+        "title": "Smarp",
+        "description": "As Head of Technology, I am responsible for\n      the actions and results delivered by the entire product team\n      including but not limited to product strategy, development, deployment, and stability\n      since 2012."
+      },
+      {
+        "title": "Social Ark",
+        "description": "A failed startup, but invaluable lessons, in terms of\n      technology, entrepreneurship and fail-fast starup, 2011-2012."
+      },
+      {
+        "title": "Eventio",
+        "description": "I found the anwser to an inpirational question,\n      \"what if you had only one more day to live\", 2011"
+      }
+    ],
+    "highlightArticleList": []
+  }
+]

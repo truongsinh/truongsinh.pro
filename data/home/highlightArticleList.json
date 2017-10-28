@@ -1,0 +1,63 @@
+[
+  {
+    "title": "HOW stop saying \"I'm too busy\" (and not just WHY)",
+    "href": "https://www.linkedin.com/pulse/how-stop-saying-im-too-busy-just-why-truongsinh-tran-nguyen/",
+    "thumbnail": "./toobusy.png",
+    "action": "Read & discuss on Linkedin →",
+    "tagList": [
+      "leadership",
+      "time management"
+    ]
+  },
+  {
+    "title": "Solving problems without waiting for irrelavent info",
+    "href": "https://www.linkedin.com/pulse/we-need-more-information-do-iterations-assumption-tran-nguyen/",
+    "thumbnail": "./helloquence-61189.jpg",
+    "action": "Read & discuss on Linkedin →",
+    "tagList": [
+      "leadership",
+      "problem solving"
+    ]
+  },
+  {
+    "title": "2 speeches given on inauguration day, 2 leadership styles",
+    "href": "https://www.linkedin.com/pulse/2-contrast-speeches-given-inauguration-day-truongsinh-tran-nguyen/",
+    "thumbnail": "./leader.png",
+    "action": "Read & discuss on Linkedin →",
+    "tagList": [
+      "leadership",
+      "inspiration"
+    ]
+  },
+  {
+    "title": "Stop saying, \"it depends\"; make your answers useful",
+    "href": "https://www.linkedin.com/pulse/stop-saying-depends-make-your-answers-useful-truongsinh-tran-nguyen/",
+    "thumbnail": "./itdepends.jpg",
+    "action": "Read & discuss on Linkedin →",
+    "tagList": [
+      "leadership",
+      "problem solving"
+    ]
+  },
+  {
+    "title": "Fighting spam email: stop IPs blacklist, start using SPF & DKIM",
+    "href": "https://www.linkedin.com/pulse/fighting-spam-email-stop-blacklisting-ips-start-using-tran-nguyen/",
+    "thumbnail": "./william-iven-8515.jpg",
+    "action": "Read & discuss on Linkedin →",
+    "tagList": [
+      "technology",
+      "email",
+      "spam"
+    ]
+  },
+  {
+    "title": "Continuous Integration (CI) for Golang with Gitlab 8.x",
+    "href": "https://tech.smarp.com/truongsinh/continuous-integration-ci-for-golang-with-gitlab-8-x/",
+    "thumbnail": "./carlos-muza-84523.jpg",
+    "action": "Read on Smarp blog →",
+    "tagList": [
+      "technology",
+      "continuous integration"
+    ]
+  }
+]
