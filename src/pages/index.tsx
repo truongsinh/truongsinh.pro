@@ -87,8 +87,8 @@ export default (props: IndexPageProps) => {
             <Grid.Column >
               <A className="thumbnail" href={e.href}>
                 <span className="img">
-                  <Img resolutions={e.thumbnail.childImageSharp.resolutions}/>
                   <span className="cover"><span className="more">{e.action}</span></span>
+                  <Img resolutions={e.thumbnail.childImageSharp.resolutions}/>
                 </span>
                 <span className="title">{e.title}</span>
               </A>

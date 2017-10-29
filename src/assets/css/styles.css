@@ -412,6 +412,7 @@ img {
   text-indent: 0;
 }
 .thumbnail .cover {
+  z-index: 9;
   position: absolute;
   display: block;
   opacity: 0;
