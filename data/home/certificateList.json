@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Professional Scrum Master I",
+    "href": "https://www.scrum.org/user/293633",
+    "badge": "./psm1-badge.png"
+  },
+  {
+    "title": "Codility Golden Certificate",
+    "href": "https://codility.com/cert/view/certQA3FHT-TUAZ24ZAEFCT6P6D",
+    "badge": "./svg/codility-omega-2013.svg"
+  },
+  {
+    "title": "Codility Golden Award",
+    "href": "https://codility.com/cert/view/cert2MKCRF-5XWUD8YRDZYTEBJ7",
+    "badge": "./svg/codility-natrinum-2014.svg"
+  }
+]

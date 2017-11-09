@@ -2,12 +2,15 @@ import * as React from "react";
 import { A } from "../components/a";
 import { Footer } from "../components/footer/footer";
 import Img from 'gatsby-image';
-import {
-  List, Container, Icon, SemanticICONS,
-  Grid,
-  Segment,
-  Image,
-} from "semantic-ui-react";
+// import {
+//   SemanticICONS,
+// } from "semantic-ui-react/dist/commonjs";
+import Segment from "semantic-ui-react/dist/commonjs/elements/Segment";
+import Image from "semantic-ui-react/dist/commonjs/elements/Image";
+import Grid from "semantic-ui-react/dist/commonjs/collections/Grid";
+import List from "semantic-ui-react/dist/commonjs/elements/List";
+import Container from "semantic-ui-react/dist/commonjs/elements/Container";
+import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 interface IndexPageProps {
   location: {
     pathname: string;
@@ -21,6 +24,7 @@ interface IndexPageProps {
 export default (props: IndexPageProps) => {
   const data = props.data.allDataJson.edges[0].node;
   const highlightArticleList = props.data.allHighlightArticleListJson.edges.map(e => e.node);
+  const certificateList = props.data.allCertificateListJson.edges.map(e => e.node);
   // data.avatarUrl = props.data.file.childImageSharp.resolutions;
   return <div className="home">
     <header id="header">
@@ -46,7 +50,7 @@ export default (props: IndexPageProps) => {
             {data.socnetList.map((e) => (
               // @todo not really semantic here, should use `as` and `icon` props
               <List.Item>
-                <A href={e.href} ><Icon name={e.socnetName as SemanticICONS} size="large" /></A>
+                <A href={e.href} ><Icon name={e.socnetName} size="large" /></A>
               </List.Item>
             ))}
           </List>
@@ -88,7 +92,7 @@ export default (props: IndexPageProps) => {
               <A className="thumbnail" href={e.href}>
                 <span className="img">
                   <span className="cover"><span className="more">{e.action}</span></span>
-                  <Img resolutions={e.thumbnail.childImageSharp.resolutions}/>
+                  <Img resolutions={e.thumbnail.childImageSharp.resolutions} />
                 </span>
                 <span className="title">{e.title}</span>
               </A>
@@ -107,13 +111,50 @@ export default (props: IndexPageProps) => {
           ))}
         </Grid>
 
+        <Grid as="section" columns={3} doubling stackable className="recentworks">
+          <Grid.Row columns={1}>
+            <h2 className="section-title"><span>Certificates</span></h2>
+          </Grid.Row>
+
+          {certificateList.map((e) => (
+            <Grid.Column >
+              <A className="thumbnail" href={e.href}>
+                <span className="img">
+                  <span className="cover"><span className="more">Detail</span></span>
+                  {
+                    e.badge.childImageSharp ?
+                      <Img resolutions={e.badge.childImageSharp.resolutions} /> :
+                      <span>
+                        <span style={{
+                          display: "inline-block",
+                          height: "100%",
+                          verticalAlign: "middle",
+                        }}></span>
+                        {
+                          // e.badge.relativePath
+                          // codility-omega-2013.svg
+                          // ../../data/home/svg/codility-omega-2013.svg
+                          // "../../data/home/svg/" + e.badge.base
+                          // @todo webpack will package ALL files
+                          }
+                        <img style={{ width: 145, height: 90, position: "relative", verticalAlign: "middle", }} src={require("../../data/home/svg/" + e.badge.base)} />
+                      </span>
+                  }
+
+                </span>
+                <span className="title">{e.title}</span>
+              </A>
+            </Grid.Column>
+          ))}
+        </Grid>
+
       </Container>
 
     </main>
 
     <Footer />
   </div>
-  ;
+    ;
 }
 
 // @todo vscode graphql plugin
@@ -139,6 +180,22 @@ query GatsbyImageSampleQuery {
         careerList {
           title
           description
+        }
+      }
+    }
+  }
+  allCertificateListJson {
+    edges {
+      node {
+        title
+        href
+        badge {
+          base
+          childImageSharp {
+            resolutions(width: 290, height: 180, quality: 100) {
+              ...GatsbyImageSharpResolutions_withWebp
+            }
+          }
         }
       }
     }

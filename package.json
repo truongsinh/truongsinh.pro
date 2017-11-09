@@ -26,10 +26,11 @@
     "extract-loader": "^1.0.1",
     "gatsby": "^1.9.76",
     "gatsby-link": "^1.6.23",
-    "gatsby-plugin-typescript": "^1.4.8",
-    "gatsby-transformer-json": "^1.0.11",
+    "gatsby-plugin-lodash": "^1.0.4",
     "gatsby-plugin-sharp": "^1.6.13",
+    "gatsby-plugin-typescript": "^1.4.8",
     "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-json": "^1.0.11",
     "gatsby-transformer-sharp": "^1.6.13",
     "typescript": "^2.5.3"
   },
