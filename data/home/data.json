@@ -3,19 +3,31 @@
     "avatar": "./avatar.jpg",
     "name": "TruongSinh \"Sinh\" Tran-Nguyen",
     "tagline": "Tech Visionary, Coach and Investor",
-    "description": "\n  I am enthusiastic in technology and leadership,\n  and has been woking in ICT industry for several years,\n  both at technology- and business-oriented,\n  with and without decision-making positions.\n  I believe in creativity, revolution and self-learning orginzation.\n",
+    "description": "\n  I am enthusiastic in technology and leadership,\n  and has been woking in ICT industry for several years,\n  both at technology- and business-oriented,\n  with both decision-making and facilitator/coach positions.\n  I believe in creativity, revolution and self-learning orginzation.\n",
     "socnetList": [
       {
-        "socnetName": "twitter",
-        "href": "https://twitter.com/truongsinhtn/"
+        "socnetName": "Goodreads",
+        "href": "https://www.goodreads.com/user/show/65475383-truongsinh-tran-nguyen/"
       },
       {
-        "socnetName": "linkedin",
+        "socnetName": "LinkedIn",
         "href": "https://www.linkedin.com/in/truongsinh/"
       },
       {
-        "socnetName": "github",
+        "socnetName": "GitHub",
         "href": "https://github.com/truongsinh/"
+      },
+      {
+        "socnetName": "Twitter",
+        "href": "https://twitter.com/truongsinhtn/"
+      },
+      {
+        "socnetName": "AngelList",
+        "href": "https://angel.co/i-truongsinh-pro/"
+      },
+      {
+        "socnetName": "Stack Overflow",
+        "href": "https://stackoverflow.com/users/1326678/truongsinh/"
       }
     ],
     "careerList": [

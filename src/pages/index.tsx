@@ -11,11 +11,19 @@ import Grid from "semantic-ui-react/dist/commonjs/collections/Grid";
 import List from "semantic-ui-react/dist/commonjs/elements/List";
 import Container from "semantic-ui-react/dist/commonjs/elements/Container";
 import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
+import Popup from "semantic-ui-react/dist/commonjs/modules/Popup";
+import { SemanticICONS } from "semantic-ui-react";
+
 interface IndexPageProps {
   location: {
     pathname: string;
   };
   data: any;
+}
+
+function socnetIconCode(socnetName: string): SemanticICONS {
+  if (socnetName == "Goodreads") return "book";
+  return socnetName.toLowerCase() as SemanticICONS;
 }
 
 // @todo https://semantic-ui.com/collections/grid.html
@@ -50,7 +58,12 @@ export default (props: IndexPageProps) => {
             {data.socnetList.map((e) => (
               // @todo not really semantic here, should use `as` and `icon` props
               <List.Item>
-                <A href={e.href} ><Icon name={e.socnetName} size="large" /></A>
+                <Popup
+                  trigger={<A href={e.href} ><Icon name={socnetIconCode(e.socnetName)} size="large" /></A>}
+                  position="bottom center"
+                  content={e.socnetName}
+                  on={['hover', 'click']}
+                />
               </List.Item>
             ))}
           </List>
@@ -136,7 +149,7 @@ export default (props: IndexPageProps) => {
                           // ../../data/home/svg/codility-omega-2013.svg
                           // "../../data/home/svg/" + e.badge.base
                           // @todo webpack will package ALL files
-                          }
+                        }
                         <img style={{ width: 145, height: 90, position: "relative", verticalAlign: "middle", }} src={require("../../data/home/svg/" + e.badge.base)} />
                       </span>
                   }
