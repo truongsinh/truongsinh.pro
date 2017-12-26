@@ -1,16 +1,21 @@
 [
   {
-    "title": "Professional Scrum Master I",
+    "title": [
+      "Professional Scrum Master II",
+      "Professional Scrum Product Owner I",
+      "Professional Scrum Developer",
+      "Scaled Professional Scrum"
+    ],
     "href": "https://www.scrum.org/user/293633",
-    "badge": "./psm1-badge.png"
+    "badge": "./scrum-badge.png"
   },
   {
-    "title": "Codility Golden Certificate",
+    "title": ["Codility Golden Certificate"],
     "href": "https://codility.com/cert/view/certQA3FHT-TUAZ24ZAEFCT6P6D",
     "badge": "./svg/codility-omega-2013.svg"
   },
   {
-    "title": "Codility Golden Award",
+    "title": ["Codility Golden Award"],
     "href": "https://codility.com/cert/view/cert2MKCRF-5XWUD8YRDZYTEBJ7",
     "badge": "./svg/codility-natrinum-2014.svg"
   }

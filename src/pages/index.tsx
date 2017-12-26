@@ -142,7 +142,7 @@ export default (props: IndexPageProps) => {
                   }
 
                 </span>
-                <span className="title">{e.title}</span>
+                {e.title.map((title: string) => <div>{title}</div>)}
               </A>
             </Grid.Column>
           ))}
