@@ -21,9 +21,46 @@ interface IndexPageProps {
   data: any;
 }
 
-function socnetIconCode(socnetName: string): SemanticICONS {
-  if (socnetName == "Goodreads") return "book";
-  return socnetName.toLowerCase() as SemanticICONS;
+function socnetIcon(socnetName: string): JSX.Element {
+  if (socnetName == "Crunchbase") return (
+    <div>
+      <Icon.Group size='large'>
+        <Icon size='large' style={{
+          // fontSize: "1.2em",
+        }} name='square' />
+        <Icon size='small' style={{
+          fontWeight: "bold",
+          color: "white",
+          fontFamily: "arial",
+          marginLeft: "-2px",
+        }}>cb</Icon>
+      </Icon.Group>
+    </div>
+  );
+  if (socnetName == "Goodreads") return (
+    <div>
+      <Icon.Group size='large'>
+        <Icon size='large' style={{
+          // fontSize: "1.2em",
+        }} name='square' />
+        <Icon size='large' style={{
+          fontFamily: "arial",
+          fontSize: "1.2em",
+          color: "white",
+          marginLeft: "-2px",
+          marginTop: "-5px",
+        }}>g</Icon>
+      </Icon.Group>
+    </div>
+  );
+
+  const iconName = `${socnetName.toLowerCase()}` as SemanticICONS;
+  return (
+    <Icon.Group size='large'>
+      <Icon name={iconName} size="large" />
+      </Icon.Group>
+      );
+
 }
 
 // @todo https://semantic-ui.com/collections/grid.html
@@ -59,7 +96,7 @@ export default (props: IndexPageProps) => {
               // @todo not really semantic here, should use `as` and `icon` props
               <List.Item>
                 <Popup
-                  trigger={<A href={e.href} ><Icon name={socnetIconCode(e.socnetName)} size="large" /></A>}
+                  trigger={<A href={e.href} >{socnetIcon(e.socnetName)}</A>}
                   position="bottom center"
                   content={e.socnetName}
                   on={['hover', 'click']}
