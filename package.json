@@ -23,6 +23,7 @@
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
     "@types/react-helmet": "^5.0.5",
+    "@types/rebass": "^0.2.19",
     "extract-loader": "1.0.1",
     "gatsby": "^1.9.231",
     "gatsby-link": "^1.6.39",
@@ -39,6 +40,8 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
+    "react-icons-kit": "^1.0.7",
+    "rebass": "^2.0.0-0",
     "semantic-ui-css": "^2.3.0",
     "semantic-ui-react": "^0.78.3"
   }

@@ -2,17 +2,18 @@ import * as React from "react";
 import { A } from "../components/a";
 import { Footer } from "../components/footer/footer";
 import Img from 'gatsby-image';
+import {
+  Flex,
+  Box,
+  Container,
+} from "rebass";
 // import {
-//   SemanticICONS,
-// } from "semantic-ui-react/dist/commonjs";
-import Segment from "semantic-ui-react/dist/commonjs/elements/Segment";
-import Image from "semantic-ui-react/dist/commonjs/elements/Image";
-import Grid from "semantic-ui-react/dist/commonjs/collections/Grid";
-import List from "semantic-ui-react/dist/commonjs/elements/List";
-import Container from "semantic-ui-react/dist/commonjs/elements/Container";
-import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
-import Popup from "semantic-ui-react/dist/commonjs/modules/Popup";
-import { SemanticICONS } from "semantic-ui-react";
+//    Twitter,
+//    Github,
+//    Linkedin,
+//    } from "grommet-icons";
+// import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
+// import { SemanticICONS } from "semantic-ui-react";
 
 interface IndexPageProps {
   location: {
@@ -22,44 +23,55 @@ interface IndexPageProps {
 }
 
 function socnetIcon(socnetName: string): JSX.Element {
-  if (socnetName == "Crunchbase") return (
-    <div>
-      <Icon.Group size='large'>
-        <Icon size='large' style={{
-          // fontSize: "1.2em",
-        }} name='square' />
-        <Icon size='small' style={{
-          fontWeight: "bold",
-          color: "white",
-          fontFamily: "arial",
-          marginLeft: "-2px",
-        }}>cb</Icon>
-      </Icon.Group>
-    </div>
-  );
-  if (socnetName == "Goodreads") return (
-    <div>
-      <Icon.Group size='large'>
-        <Icon size='large' style={{
-          // fontSize: "1.2em",
-        }} name='square' />
-        <Icon size='large' style={{
-          fontFamily: "arial",
-          fontSize: "1.2em",
-          color: "white",
-          marginLeft: "-2px",
-          marginTop: "-5px",
-        }}>g</Icon>
-      </Icon.Group>
-    </div>
-  );
+  // if (socnetName == "Twitter") return (
+  //   <Twitter color="plain" />
+  // );
+  // if (socnetName == "GitHub") return (
+  //   <Github color="plain" />
+  // );
+  // if (socnetName == "LinkedIn") return (
+  //   <Linkedin color="plain" />
+  // );
+  // Linkedin
+  return <div></div>
+  // if (socnetName == "Crunchbase") return (
+  //   <div>
+  //     <Icon.Group size='large'>
+  //       <Icon size='large' style={{
+  //         // fontSize: "1.2em",
+  //       }} name='square' />
+  //       <Icon size='small' style={{
+  //         fontWeight: "bold",
+  //         color: "white",
+  //         fontFamily: "arial",
+  //         marginLeft: "-2px",
+  //       }}>cb</Icon>
+  //     </Icon.Group>
+  //   </div>
+  // );
+  // if (socnetName == "Goodreads") return (
+  //   <div>
+  //     <Icon.Group size='large'>
+  //       <Icon size='large' style={{
+  //         // fontSize: "1.2em",
+  //       }} name='square' />
+  //       <Icon size='large' style={{
+  //         fontFamily: "arial",
+  //         fontSize: "1.2em",
+  //         color: "white",
+  //         marginLeft: "-2px",
+  //         marginTop: "-5px",
+  //       }}>g</Icon>
+  //     </Icon.Group>
+  //   </div>
+  // );
 
-  const iconName = `${socnetName.toLowerCase()}` as SemanticICONS;
-  return (
-    <Icon.Group size='large'>
-      <Icon name={iconName} size="large" />
-      </Icon.Group>
-      );
+  // const iconName = `${socnetName.toLowerCase()}` as SemanticICONS;
+  // return (
+  //   <Icon.Group size='large'>
+  //     <Icon name={iconName} size="large" />
+  //   </Icon.Group>
+  // );
 
 }
 
@@ -91,19 +103,14 @@ export default (props: IndexPageProps) => {
           />
           <span className="title">{data.name}</span>
           <span className="tagline">{data.tagline}</span>
-          <List horizontal className="tagline">
+          <ul horizontal className="tagline">
             {data.socnetList.map((e) => (
               // @todo not really semantic here, should use `as` and `icon` props
-              <List.Item>
-                <Popup
-                  trigger={<A href={e.href} >{socnetIcon(e.socnetName)}</A>}
-                  position="bottom center"
-                  content={e.socnetName}
-                  on={['hover', 'click']}
-                />
-              </List.Item>
+              <li>
+                <A href={e.href} >{socnetIcon(e.socnetName)}</A>
+              </li>
             ))}
-          </List>
+          </ul>
         </h1>
       </section>
       {/* </div> */}
@@ -113,90 +120,91 @@ export default (props: IndexPageProps) => {
     <main id="main">
 
       <Container>
-        <Segment as="section" basic textAlign="center">
+        <section style={{
+          textAlign: "center",
+        }} >
           <p className="lead" style={{ color: "#999" }}>{data.description}</p>
-        </Segment>
-
-        <Grid as="section" stackable doubling columns={4} className="featured">
-          <Grid.Row>
-            <h2 className="section-title"><span>My Career</span></h2>
-          </Grid.Row>
-          {data.careerList.map((e) => (
-            <Grid.Column>
-              <h3 className="text-center">{e.title}</h3>
-              <p>{e.description}</p>
-              {/* <!--
+        </section>
+        <section>
+          <h2 className="section-title"><span>My Career</span></h2>
+          <Flex flexWrap='wrap' className="featured">
+            {data.careerList.map((e) => (
+              <Box width={[1, 1 / 2, 1 / 4]} p="1rem">
+                <h3 className="text-center">{e.title}</h3>
+                <p>{e.description}</p>
+                {/* <!--
             <p className="text-center"><a href="" className="btn btn-action">Read more</a></p>
              --> */}
-            </Grid.Column>
-          ))}
-        </Grid>
+              </Box>
+            ))}
+          </Flex>
+        </section>
 
-        <Grid as="section" columns={3} doubling stackable className="recentworks">
-          <Grid.Row columns={1}>
-            <h2 className="section-title"><span>Highlight Articles</span></h2>
-          </Grid.Row>
+        <section>
+          <h2 className="section-title"><span>Highlight Articles</span></h2>
+          <Flex flexWrap='wrap' className="recentworks">
 
-          {highlightArticleList.map((e) => (
-            <Grid.Column >
-              <A className="thumbnail" href={e.href}>
-                <span className="img">
-                  <span className="cover"><span className="more">{e.action}</span></span>
-                  <Img resolutions={e.thumbnail.childImageSharp.resolutions} />
-                </span>
-                <span className="title">{e.title}</span>
-              </A>
-              {/* // @todo the use of `Container` create bigger margin than original work  */}
-              <Container textAlign="center">
-                <List celled horizontal>
-                  {e.tagList.map((tag) => (
-                    // @todo in original work class ".details" is used, not `fontSize: ".75rem"`
-                    <List.Item
-                      style={{ fontSize: ".75rem" }}
-                    ><a href="">{tag}</a></List.Item>
-                  ))}
-                </List>
-              </Container>
-            </Grid.Column>
-          ))}
-        </Grid>
+            {highlightArticleList.map((e) => (
+              <Box width={[1, 1 / 2, 1 / 3]} p="1rem">
+                <A className="thumbnail" href={e.href}>
+                  <span className="img">
+                    <span className="cover"><span className="more">{e.action}</span></span>
+                    <Img resolutions={e.thumbnail.childImageSharp.resolutions} />
+                  </span>
+                  <span className="title">{e.title}</span>
+                </A>
+                {/* // @todo the use of `Container` create bigger margin than original work  */}
+                <Container textAlign="center">
+                  <ul celled horizontal>
+                    {e.tagList.map((tag) => (
+                      // @todo in original work class ".details" is used, not `fontSize: ".75rem"`
+                      <li
+                        style={{ fontSize: ".75rem" }}
+                      ><a href="">{tag}</a></li>
+                    ))}
+                  </ul>
+                </Container>
+              </Box>
+            ))}
+          </Flex>
+        </section>
 
-        <Grid as="section" columns={3} doubling stackable className="recentworks">
-          <Grid.Row columns={1}>
-            <h2 className="section-title"><span>Certificates</span></h2>
-          </Grid.Row>
+        <section>
+          <h2 className="section-title"><span>Certificates</span></h2>
+          <Flex flexWrap='wrap' className="recentworks">
 
-          {certificateList.map((e) => (
-            <Grid.Column >
-              <A className="thumbnail" href={e.href}>
-                <span className="img">
-                  <span className="cover"><span className="more">Detail</span></span>
-                  {
-                    e.badge.childImageSharp ?
-                      <Img resolutions={e.badge.childImageSharp.resolutions} /> :
-                      <span>
-                        <span style={{
-                          display: "inline-block",
-                          height: "100%",
-                          verticalAlign: "middle",
-                        }}></span>
-                        {
-                          // e.badge.relativePath
-                          // codility-omega-2013.svg
-                          // ../../data/home/svg/codility-omega-2013.svg
-                          // "../../data/home/svg/" + e.badge.base
-                          // @todo webpack will package ALL files
-                        }
-                        <img style={{ width: 145, height: 90, position: "relative", verticalAlign: "middle", }} src={require("../../data/home/svg/" + e.badge.base)} />
-                      </span>
-                  }
+            {certificateList.map((e) => (
+              <Box width={[1, 1 / 2, 1 / 3]} p="1rem" >
+                <A className="thumbnail" href={e.href}>
+                  <span className="img">
+                    <span className="cover"><span className="more">Detail</span></span>
+                    {
+                      e.badge.childImageSharp ?
+                        <Img resolutions={e.badge.childImageSharp.resolutions} /> :
+                        <span>
+                          <span style={{
+                            display: "inline-block",
+                            height: "100%",
+                            verticalAlign: "middle",
+                          }}></span>
+                          {
+                            // e.badge.relativePath
+                            // codility-omega-2013.svg
+                            // ../../data/home/svg/codility-omega-2013.svg
+                            // "../../data/home/svg/" + e.badge.base
+                            // @todo webpack will package ALL files
+                          }
+                          <img style={{ width: 145, height: 90, position: "relative", verticalAlign: "middle", }} src={require("../../data/home/svg/" + e.badge.base)} />
+                        </span>
+                    }
 
-                </span>
-                {e.title.map((title: string) => <div>{title}</div>)}
-              </A>
-            </Grid.Column>
-          ))}
-        </Grid>
+                  </span>
+                  {e.title.map((title: string) => <div>{title}</div>)}
+                </A>
+              </Box>
+            ))}
+          </Flex>
+        </section>
 
       </Container>
 

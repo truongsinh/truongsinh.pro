@@ -1,4 +1,7 @@
 import * as React from "react";
+import {
+  Provider,
+} from "rebass";
 import { renderToStaticMarkup } from "react-dom/server";
 
 
@@ -50,6 +53,7 @@ module.exports = (props: HtmlProps) => {
         <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
         `}
       </Head>
+      <Provider>
       <body className="home" {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
@@ -59,6 +63,7 @@ module.exports = (props: HtmlProps) => {
         />
         {props.postBodyComponents}
       </body>
+      </Provider>
     </html>
   );
 };
