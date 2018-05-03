@@ -1,22 +1,21 @@
-[
-  {
-    "title": [
-      "Professional Scrum Master II",
-      "Professional Scrum Product Owner I",
-      "Professional Scrum Developer",
-      "Scaled Professional Scrum"
-    ],
-    "href": "https://www.scrum.org/user/293633",
-    "badge": "./scrum-badge.png"
-  },
-  {
-    "title": ["Codility Golden Certificate"],
-    "href": "https://codility.com/cert/view/certQA3FHT-TUAZ24ZAEFCT6P6D",
-    "badge": "./svg/codility-omega-2013.svg"
-  },
-  {
-    "title": ["Codility Golden Award"],
-    "href": "https://codility.com/cert/view/cert2MKCRF-5XWUD8YRDZYTEBJ7",
-    "badge": "./svg/codility-natrinum-2014.svg"
-  }
+[{
+        "title": [
+            "Professional Scrum Master III",
+            "Professional Scrum Product Owner II",
+            "Professional Scrum Developer",
+            "Scaled Professional Scrum"
+        ],
+        "href": "https://www.scrum.org/user/293633",
+        "badge": "./scrum-badge.png"
+    },
+    {
+        "title": ["PMI ACP"],
+        "href": "https://www.youracclaim.com/badges/0dc5f2bb-9cb0-4dc8-943e-91a0202ece96/truongsinh.pro",
+        "badge": "./pmi-acp.png"
+    },
+    {
+        "title": ["Codility Golden Award"],
+        "href": "https://app.codility.com/cert/view/cert3UEM6H-HQKS4X2D5P7JJUMN/",
+        "badge": "./svg/codility-nickel-2018.svg"
+    }
 ]
