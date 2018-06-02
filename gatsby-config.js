@@ -13,5 +13,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     "gatsby-plugin-typescript",
+    `gatsby-plugin-styled-components`,
   ]
 };

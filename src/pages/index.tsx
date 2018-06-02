@@ -13,6 +13,7 @@ import Container from "semantic-ui-react/dist/commonjs/elements/Container";
 import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 import Popup from "semantic-ui-react/dist/commonjs/modules/Popup";
 import { SemanticICONS } from "semantic-ui-react";
+import { injectGlobal } from "styled-components";
 
 interface IndexPageProps {
   location: {
@@ -62,6 +63,13 @@ function socnetIcon(socnetName: string): JSX.Element {
       );
 
 }
+const sCss = require('semantic-ui-css/semantic.css').toString();
+const style = require("../assets/css/styles.css").toString();
+injectGlobal`
+${style}
+`;
+
+console.log(sCss);
 
 // @todo https://semantic-ui.com/collections/grid.html
 // All grid systems chooses an arbitrary column count to allow per row. Semantic's default theme uses 16 columns.
@@ -75,10 +83,6 @@ export default (props: IndexPageProps) => {
     <header id="header">
       {/* <!-- Fonts --> */}
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
-      {/* <!-- Semantic UI --> */}
-      <link rel="stylesheet" href={require('semantic-ui-css/semantic.min.css')} />
-      {/* <!-- Custom styles --> */}
-      <link rel="stylesheet" href={require("../assets/css/styles.css")} />
       {/* <div id="head" className="parallax" parallax-speed="2"> */}
       <section id="head">
         <h1 id="logo" className="text-center">
