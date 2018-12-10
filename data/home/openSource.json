@@ -1,0 +1,18 @@
+{
+  "contributor": {
+    "github": {
+      "PM2 Production Runtime and Process Manage": ["Unitech/pm2"],
+      "Flutter": [
+        "flutter/flutter",
+        "flutter/plugins",
+        "flutter/sentry"
+      ],
+      "Image process loader for webpack, powered by sharp": ["foray1010/image-process-loader"]
+    }
+  },
+  "author": {
+    "npm": {
+      "Evercookie (Node) Express/Connect middleware": "evercookie"
+    }
+  }
+}
