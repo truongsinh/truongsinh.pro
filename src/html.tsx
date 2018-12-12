@@ -42,7 +42,7 @@ module.exports = (props: HtmlProps) => {
 
         <title>TruongSinh Tran-Nguyen</title>
 
-        <link rel="shortcut icon" href="assets/images/gt_favicon.png" />
+        <link rel="shortcut icon" href={require("./assets/images/gt_favicon.png")} />
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43130231-1"></script>
