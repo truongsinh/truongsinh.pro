@@ -74,7 +74,7 @@ export default (props: IndexPageProps) => {
   return <div className="home">
     <header id="header">
       {/* <!-- Fonts --> */}
-      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
       {/* <!-- Semantic UI --> */}
       <link rel="stylesheet" href={require('semantic-ui-css/semantic.min.css')} />
       {/* <!-- Custom styles --> */}

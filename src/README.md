@@ -8,7 +8,7 @@ Font Awesome 4, parallax effects and more are included (but can be turned off of
 
 License
 -------
-**Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
+**Creative Commons Attribution 3.0** - https://creativecommons.org/licenses/by/3.0/
 
 
 Bug tracker
@@ -21,12 +21,12 @@ https://github.com/pozh/Initio/issues
 
 Credits
 -------
-* Design and development: **Sergey Pozhilov** - http://pozhilov.com
-* More free templates by Sergey: http://gettemplate.com
+* Design and development: **Sergey Pozhilov** - https://pozhilov.com
+* More free templates by Sergey: https://gettemplate.com
 
 Photos used in the template
 -------
-* http://www.publicdomainpictures.net/view-image.php?image=19999
-* http://www.publicdomainpictures.net/view-image.php?image=6354
-* http://imcreator.com/free/business/macbook-computer
-* http://unsplush.com
+* https://www.publicdomainpictures.net/view-image.php?image=19999
+* https://www.publicdomainpictures.net/view-image.php?image=6354
+* https://imcreator.com/free/business/macbook-computer
+* https://unsplush.com
