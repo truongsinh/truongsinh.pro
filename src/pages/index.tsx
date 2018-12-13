@@ -67,6 +67,12 @@ function socnetIcon(socnetName: string): JSX.Element {
 // All grid systems chooses an arbitrary column count to allow per row. Semantic's default theme uses 16 columns.
 // The default column count, and other arbitrary features of grids can be changed by adjusting Semantic UI's underlying theming variables.
 export default (props: IndexPageProps) => {
+
+  /* <!-- Semantic UI --> */
+  require('semantic-ui-css/semantic.min.css');
+  /* <!-- Custom styles --> */
+  require("../assets/css/styles.css");
+
   const data = props.data.allDataJson.edges[0].node;
   const highlightArticleList = props.data.allHighlightArticleListJson.edges.map(e => e.node);
   const certificateList = props.data.allCertificateListJson.edges.map(e => e.node);
@@ -75,10 +81,6 @@ export default (props: IndexPageProps) => {
     <header id="header">
       {/* <!-- Fonts --> */}
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
-      {/* <!-- Semantic UI --> */}
-      <link rel="stylesheet" href={require('semantic-ui-css/semantic.min.css')} />
-      {/* <!-- Custom styles --> */}
-      <link rel="stylesheet" href={require("../assets/css/styles.css")} />
       {/* <div id="head" className="parallax" parallax-speed="2"> */}
       <section id="head">
         <h1 id="logo" className="text-center">
