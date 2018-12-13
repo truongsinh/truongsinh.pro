@@ -1,5 +1,5 @@
-import * as React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+const React = require("react");
+const { renderToStaticMarkup } = require("react-dom/server");
 
 
 class Head extends React.PureComponent<{}, {}>{
