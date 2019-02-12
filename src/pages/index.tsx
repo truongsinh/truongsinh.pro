@@ -1,6 +1,7 @@
 import * as React from "react";
 import { A } from "../components/a";
 import { Footer } from "../components/footer/footer";
+<<<<<<< Updated upstream
 import Img from 'gatsby-image';
 // import {
 //   SemanticICONS,
@@ -14,6 +15,10 @@ import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 import Popup from "semantic-ui-react/dist/commonjs/modules/Popup";
 import { SemanticICONS } from "semantic-ui-react";
 
+=======
+import Helmet from "react-helmet";
+require("../assets/css/styles.css");
+>>>>>>> Stashed changes
 interface IndexPageProps {
   location: {
     pathname: string;
@@ -63,6 +68,7 @@ function socnetIcon(socnetName: string): JSX.Element {
 
 }
 
+<<<<<<< Updated upstream
 // @todo https://semantic-ui.com/collections/grid.html
 // All grid systems chooses an arbitrary column count to allow per row. Semantic's default theme uses 16 columns.
 // The default column count, and other arbitrary features of grids can be changed by adjusting Semantic UI's underlying theming variables.
@@ -72,6 +78,24 @@ export default (props: IndexPageProps) => {
   const certificateList = props.data.allCertificateListJson.edges.map(e => e.node);
   // data.avatarUrl = props.data.file.childImageSharp.resolutions;
   return <div className="home">
+=======
+const css = (process.env.NODE_ENV === `production`) ?
+  <link rel="stylesheet" href={require("../assets/css/styles.css")} />
+  : null;
+
+export default (props: IndexPageProps) =>
+  <div className="home">
+    <Helmet>
+      {/* <!-- Bootstrap --> */}
+      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet" />
+      {/* <!-- Icons --> */}
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+      {/* <!-- Fonts --> */}
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
+      {/* <!-- Custom styles --> */}
+      {css}
+    </Helmet>
+>>>>>>> Stashed changes
     <header id="header">
       {/* <!-- Fonts --> */}
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700" />
@@ -203,6 +227,14 @@ export default (props: IndexPageProps) => {
     </main>
 
     <Footer />
+<<<<<<< Updated upstream
+=======
+
+    {/* <!-- JavaScript libs are placed at the end of the document so the pages load faster --> */}
+    <script src={require("file!../assets/js/jquery.min.js")}></script>
+    <script src={require("file!../assets/js/bootstrap.min.js")}></script>
+    <script src={require("file!../assets/js/template.js")}></script>
+>>>>>>> Stashed changes
   </div>
     ;
 }

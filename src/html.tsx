@@ -1,5 +1,6 @@
 import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import Helmet from "react-helmet";
 
 
 class Head extends React.PureComponent<{}, {}>{
@@ -29,6 +30,7 @@ interface HtmlProps {
 
 // Use `module.exports` to be compliante with `webpack-require` import method
 module.exports = (props: HtmlProps) => {
+  const helmet = Helmet.rewind();
   return (
     <html {...props.htmlAttributes}>
       <Head>
