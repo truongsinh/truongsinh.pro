@@ -68,11 +68,6 @@ function socnetIcon(socnetName: string): JSX.Element {
 // The default column count, and other arbitrary features of grids can be changed by adjusting Semantic UI's underlying theming variables.
 export default (props: IndexPageProps) => {
 
-  /* <!-- Semantic UI --> */
-  require('semantic-ui-css/semantic.min.css');
-  /* <!-- Custom styles --> */
-  require("../assets/css/styles.css");
-
   const data = props.data.allDataJson.edges[0].node;
   const highlightArticleList = props.data.allHighlightArticleListJson.edges.map(e => e.node);
   const certificateList = props.data.allCertificateListJson.edges.map(e => e.node);

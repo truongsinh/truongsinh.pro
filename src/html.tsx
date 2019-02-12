@@ -1,6 +1,11 @@
 import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
+/* <!-- Semantic UI --> */
+require('semantic-ui-css/semantic.min.css');
+/* <!-- Custom styles --> */
+require("../assets/css/styles.css");
+
 
 class Head extends React.PureComponent<{}, {}>{
   render() {
