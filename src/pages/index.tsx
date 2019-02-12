@@ -203,6 +203,14 @@ export default (props: IndexPageProps) => {
     </main>
 
     <Footer />
+<<<<<<< Updated upstream
+=======
+
+    {/* <!-- JavaScript libs are placed at the end of the document so the pages load faster --> */}
+    <script src={require("file!../assets/js/jquery.min.js")}></script>
+    <script src={require("file!../assets/js/bootstrap.min.js")}></script>
+    <script src={require("file!../assets/js/template.js")}></script>
+>>>>>>> Stashed changes
   </div>
     ;
 }
